@@ -1,0 +1,17 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+    </plugin-info>
+    <workflow-validator key="custom-noconfig-validator"
+                        name="No Duplicate Validator"
+                        class="com.ideotechnologies.jira.plugin.workflow.validator.WorkFlowNoDuplicationValidatorFactory">
+        <description>A validator to prevent duplicate issues (Compare issue
+            summary)</description>
+        <validator-class>com.ideotechnologies.jira.plugin.workflow.validator.ValidatorNoDuplicate
+        </validator-class>
+        <resource type="velocity" name="view"
+                  location="secure/admin/views/workflow/noduplicate-view.vm" />
+    </workflow-validator>
+</atlassian-plugin>
