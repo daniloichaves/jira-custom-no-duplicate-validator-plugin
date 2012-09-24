@@ -27,7 +27,6 @@ public class ValidatorNoDuplicate implements Validator {
 		 issueManager = ComponentManager.getInstance().getIssueManager();
 			issueIds =	 (List<Long>) issueManager.getIssueIdsForProject(project.getId());
 		} catch (GenericEntityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		for (Long issueId : issueIds) {
